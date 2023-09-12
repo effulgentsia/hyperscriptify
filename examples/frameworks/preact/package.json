@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "./node_modules/.bin/esbuild ./src --bundle --outfile=dist.js --loader:.js=jsx --jsx=automatic --jsx-import-source=preact --jsx-factory=h --jsx-fragment=Fragment --alias:react=preact/compat --alias:react-dom=preact/compat --minify"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.8",
+    "@mui/material": "^5.14.8",
+    "esbuild": "^0.19.2",
+    "just-camel-case": "^6.2.0",
+    "just-map-keys": "^2.3.0",
+    "just-map-values": "^3.2.0",
+    "just-safe-set": "^4.2.1",
+    "preact": "^10.17.1"
+  }
+}
