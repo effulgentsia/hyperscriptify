@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "./node_modules/.bin/esbuild ./src --bundle --outfile=dist.js --loader:.js=jsx --jsx=automatic --minify"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.8",
+    "@mui/material": "^5.14.8",
+    "esbuild": "^0.19.2",
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
