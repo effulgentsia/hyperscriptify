@@ -1,0 +1,70 @@
+<html>
+<body>
+
+<!--
+The contents of <template> elements is parsed by the browser, but not rendered
+by the browser. Its purpose is solely for JavaScript to do something with. In
+this case, when the JavaScript in dist.js (compiled from src/index.js) calls:
+
+```
+App = hyperscriptify(document.getElementById('example').content, ...)
+```
+
+it gives the equivalent result as what it would get if it called:
+
+```
+App =
+  <>
+    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
+      <SpeedDial
+        ariaLabel="SpeedDial basic example"
+        sx={{ position: 'absolute', bottom: 16, right: 16 }}
+        icon={<SpeedDialIcon />}
+      >
+        <SpeedDialAction key="Copy" tooltipTitle="Copy" icon={<FileCopyIcon />} />
+        <SpeedDialAction key="Save" tooltipTitle="Save" icon={<SaveIcon />} />
+        <SpeedDialAction key="Print" tooltipTitle="Print" icon={<PrintIcon />} />
+        <SpeedDialAction key="Share" tooltipTitle="Share" icon={<ShareIcon />} />
+      </SpeedDial>
+    </Box>
+  </>
+```
+
+This example is adapted from https://mui.com/material-ui/react-speed-dial/.
+
+Although the HTML representation is less compact than the equivalent JSX
+representation, its benefit is that it can be output by a web application
+back-end that's not written in JavaScript.
+-->
+<template id="example">
+  <mui-box sx='{ "height": 320, "transform": "translateZ(0px)", "flexGrow": 1 }'>
+
+    <mui-speed-dial aria-label="SpeedDial basic example" sx='{ "position": "absolute", "bottom": 16, "right": 16 }'>
+      <mui-speed-dial-icon slot="icon"></mui-speed-dial-icon>
+
+      <mui-speed-dial-action key="Copy" tooltip-title="Copy">
+        <mui-file-copy-icon slot="icon"></mui-file-copy-icon>
+      </mui-speed-dial-action>
+
+      <mui-speed-dial-action key="Save" tooltip-title="Save">
+        <mui-save-icon slot="icon"></mui-save-icon>
+      </mui-speed-dial-action>
+
+      <mui-speed-dial-action key="Print" tooltip-title="Print">
+        <mui-print-icon slot="icon"></mui-print-icon>
+      </mui-speed-dial-action>
+
+      <mui-speed-dial-action key="Share" tooltip-title="Share">
+        <mui-share-icon slot="icon"></mui-share-icon>
+      </mui-speed-dial-action>
+    </mui-speed-dial>
+
+  </mui-box>
+</template>
+
+<!-- The container that dist.js renders, with React, the above "App" into. -->
+<div id="root"></div>
+
+<script src="dist.js"></script>
+</body>
+</html>
