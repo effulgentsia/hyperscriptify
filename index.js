@@ -113,6 +113,16 @@ export default function hyperscriptify(domElementOrFragment, h, Fragment, compon
     }
   });
 
+  // For elements that have a slot attribute, and are child elements of a
+  // component, this function uses that slot attribute to distribute that slot
+  // content to the parent component's props (see the code above). Therefore,
+  // don't also retain the slot attribute, since that could conflict with the
+  // component's props expectations or trigger additional slot distribution by
+  // the browser.
+  if (attributes.slot && components[element.parentNode.nodeName.toLowerCase()]) {
+    delete attributes.slot;
+  }
+
   // Create a props object from the attributes and slots.
   const props = (element && options.propsify) ? options.propsify(attributes, slots, element) : { ...attributes, ...slots };
 
