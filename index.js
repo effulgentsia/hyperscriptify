@@ -124,7 +124,8 @@ export default function hyperscriptify(domElementOrFragment, h, Fragment, compon
   }
 
   // Create a props object from the attributes and slots.
-  const props = (element && options.propsify) ? options.propsify(attributes, slots, element) : { ...attributes, ...slots };
+  const context = { tagName, component, element };
+  const props = (element && options.propsify) ? options.propsify(attributes, slots, context) : { ...attributes, ...slots };
 
   return h(component || tagName, props, ...children);
 }
