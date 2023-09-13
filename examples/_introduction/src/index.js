@@ -1,5 +1,5 @@
 import hyperscriptify from 'hyperscriptify';
-import propsify from "hyperscriptify-propsify-standard";
+import propsify from 'hyperscriptify-propsify-standard';
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import components from './components';
