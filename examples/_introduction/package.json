@@ -7,7 +7,8 @@
     "@mui/icons-material": "^5.14.8",
     "@mui/material": "^5.14.8",
     "esbuild": "^0.19.2",
-    "lodash-es": "^4.17.21",
+    "hyperscriptify": "github:effulgentsia/hyperscriptify",
+    "hyperscriptify-propsify-standard": "file:node_modules/hyperscriptify/propsify/standard",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
