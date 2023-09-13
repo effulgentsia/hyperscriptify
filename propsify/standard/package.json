@@ -1,0 +1,6 @@
+{
+  "name": "hyperscriptify-propsify-standard",
+  "dependencies": {
+    "lodash-es": "^4"
+  }
+}
