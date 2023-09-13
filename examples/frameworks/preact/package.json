@@ -7,10 +7,8 @@
     "@mui/icons-material": "^5.14.8",
     "@mui/material": "^5.14.8",
     "esbuild": "^0.19.2",
-    "just-camel-case": "^6.2.0",
-    "just-map-keys": "^2.3.0",
-    "just-map-values": "^3.2.0",
-    "just-safe-set": "^4.2.1",
+    "hyperscriptify": "github:effulgentsia/hyperscriptify",
+    "hyperscriptify-propsify-minimal": "file:node_modules/hyperscriptify/propsify/minimal",
     "preact": "^10.17.1"
   }
 }
