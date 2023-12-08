@@ -10,7 +10,7 @@ export default function propsify( attributes, slots, context ) {
   // In React, setting the value prop of an input element makes the element not
   // editable, and the defaultValue prop more closely matches the semantics of
   // the value attribute.
-  if (context.tagName === 'input' && props.defaultValue === undefined && props.value !== undefined ) {
+  if (context.tagName === 'input' && props.type !== 'submit' && props.defaultValue === undefined && props.value !== undefined ) {
     props.defaultValue = props.value;
     delete props.value;
   }
